@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.8;
+  color: #222;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.notice {
+  margin: 0;
+  padding: 8px 16px;
+  background: #fff3cd;
+  text-align: center;
+}
+
+.formal {
+  padding: 12px 16px;
+  background: #f1f5f1;
+  border-left: 4px solid #4a8f4a;
+}
+
+footer {
+  padding: 24px 16px;
+  text-align: center;
+  color: #666;
+  font-size: 0.9em;
+}
