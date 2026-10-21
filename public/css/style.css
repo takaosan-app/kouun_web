@@ -30,3 +30,25 @@ footer {
   color: #666;
   font-size: 0.9em;
 }
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95em;
+}
+
+th,
+td {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f1f5f1;
+}
