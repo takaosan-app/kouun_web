@@ -3,21 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>耕雲（kouun）</title>
+  <meta name="description" content="耕雲（こううん）は、気象の経過や栽培日誌を通して、畑の状況を知り、日々の栽培判断を支える農業アプリです。">
+  <meta name="theme-color" content="#123d2d">
+  <title>耕雲｜畑の空模様を、栽培の判断に。</title>
+  <link rel="icon" type="image/png" href="/assets/icons/icon_origin.png">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <p class="notice">テスト版です。</p>
-  <main>
-    <h1>耕雲（kouun）</h1>
-    <p>気象庁の観測データを使い、栽培の「足元の状況」を示す農業アプリです。ただいま準備中です。</p>
-    <h2>文書</h2>
-    <ul>
-      <li><a href="/legal/terms">利用規約</a></li>
-      <li><a href="/legal/privacy">個人情報の取扱い</a></li>
-    </ul>
+  <p class="notice">耕雲は現在テスト版です。アプリの正式公開に向けて準備しています。</p>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="耕雲 トップ">
+      <img src="/assets/icons/icon_origin.png" alt="" width="42" height="42">
+      <span>耕雲<small>こううん</small></span>
+    </a>
+    <nav aria-label="メインナビゲーション">
+      <a href="#about">耕雲について</a>
+      <a href="/howto/">使い方</a>
+      <a href="/news/">お知らせ</a>
+    </nav>
+  </header>
+
+  <main class="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">天気と、畑と、育てる人。</p>
+        <h1 id="hero-title">畑の空模様を、<br>栽培の判断に。</h1>
+        <p class="hero-lead">耕雲（こううん）は、気象の経過と栽培の記録をもとに、<br>作物の「いま」を知るための農業支援アプリです。</p>
+        <a class="button" href="#about">耕雲について <span aria-hidden="true">↓</span></a>
+        <p class="release-note">ただいま開発中です。</p>
+      </div>
+      <div class="hero-art">
+        <div class="sun"></div>
+        <div class="cloud"><i></i><i></i><i></i></div>
+        <div class="raindrops" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img src="/assets/icons/icon_origin.png" alt="晴れ間と雨、畑から伸びる芽を描いた耕雲のアイコン">
+        <p>空を見て、畑を知る。</p>
+      </div>
+      <div class="hero-bottom" aria-hidden="true"><span>GROW WITH THE WEATHER</span><span>01 — 03</span></div>
+    </section>
+
+    <section class="intro section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">ABOUT KOUUN</p>
+        <h2>空の変化を、<br>畑の気づきにつなげる。</h2>
+      </div>
+      <div class="intro-body">
+        <p>同じ地域でも、畑ごとに環境や栽培の進み方は違います。耕雲は、近くの気象観測データとあなたの栽培記録をひとつにして、日々の様子を振り返る手助けをします。</p>
+        <p>経験や現地での観察に、気象の記録というもうひとつの視点を。毎日の栽培を、少しずつ次の判断へつなげます。</p>
+      </div>
+    </section>
+
+    <section class="features section" aria-labelledby="features-title">
+      <div class="features-title">
+        <p class="eyebrow">WHAT YOU CAN DO</p>
+        <h2 id="features-title">畑の日々を、<br>見えるかたちに。</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-number">01</span><span class="feature-icon weather-icon" aria-hidden="true">☀</span>
+          <h3>気象の経過を知る</h3>
+          <p>圃場の近くの観測所データから、気温や雨などの移り変わりを確認できます。</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">02</span><span class="feature-icon leaf-icon" aria-hidden="true">↗</span>
+          <h3>栽培の歩みを記録する</h3>
+          <p>作物や栽培の節目、日々の作業を残して、あとから振り返れます。</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">03</span><span class="feature-icon rain-icon" aria-hidden="true">⌁</span>
+          <h3>気づきのきっかけに</h3>
+          <p>気象の積算値や病害虫に注意したい時期の目安を、栽培記録とあわせて見られます。</p>
+        </article>
+      </div>
+      <p class="caution">表示する情報は参考情報です。圃場内の実測値や天気予報、病害虫の発生診断ではありません。現地の観察や公的機関・JA等の情報とあわせてご活用ください。</p>
+    </section>
+
+    <section class="coming section">
+      <div>
+        <p class="eyebrow">COMING SOON</p>
+        <h2>使い方や更新情報も、<br>こちらでお知らせします。</h2>
+      </div>
+      <div class="coming-links">
+        <a href="/howto/"><span><small>GUIDE</small>使い方</span><b aria-hidden="true">↗</b></a>
+        <a href="/news/"><span><small>JOURNAL</small>お知らせ</span><b aria-hidden="true">↗</b></a>
+      </div>
+    </section>
   </main>
-  <footer>© takaosan.app</footer>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="/">耕雲 <span>こううん</span></a>
+    <p>天気とともに、畑を育てる。</p>
+    <div class="footer-links">
+      <a href="/legal/terms">利用規約</a>
+      <a href="/legal/privacy">個人情報の取扱い</a>
+      <a href="https://takaosan.app" target="_blank" rel="noopener noreferrer">開発者サイト ↗</a>
+    </div>
+    <small>© takaosan.app</small>
+  </footer>
 </body>
 </html>
