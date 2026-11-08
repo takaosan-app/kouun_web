@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="登録した圃場を見たり、圃場を追加・変更・削除したりするページです。">
+  <title>圃場の一覧｜使い方｜耕雲</title>
+  <link rel="icon" type="image/png" href="/assets/icons/icon_origin.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <p class="notice">耕雲は現在テスト版です。アプリの正式公開に向けて準備しています。</p>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="耕雲 トップ">
+      <img src="/assets/icons/icon_origin.png" alt="" width="42" height="42">
+      <span>耕雲<small>こううん</small></span>
+    </a>
+    <nav aria-label="メインナビゲーション">
+      <a href="/#about">耕雲について</a>
+      <a href="/howto/">使い方</a>
+      <a href="/news/">お知らせ</a>
+    </nav>
+  </header>
+
+  <main class="howto-page">
+    <p class="breadcrumb"><a href="/howto/">使い方</a></p>
+    <h1>圃場の一覧</h1>
+    <p class="lead">登録した圃場を見たり、圃場を追加・変更・削除したりするページです。</p>
+    <nav class="on-this-page" aria-label="このページの内容">
+    <p>このページの内容</p>
+    <ol>
+      <li><a href="#s1">一覧を開く</a></li>
+      <li><a href="#s2">一覧の見方</a></li>
+      <li><a href="#s3">圃場を追加する</a></li>
+      <li><a href="#s4">圃場を変える</a></li>
+      <li><a href="#s5">並べ替える</a></li>
+      <li><a href="#s6">圃場を削除する</a></li>
+    </ol>
+    </nav>
+    <article>
+      <h2 id="s1">一覧を開く</h2>
+      <p>「耕雲 ホーム」で「圃場の一覧」を押します。</p>
+      <figure class="shot"><img src="/howto/images/fields_01.png" alt="圃場の一覧の画面。「藤枝の苗場」「藤枝の本圃」「藤枝の本圃2」の3件のカード、右上の「並べ替え」、下の「圃場を追加する」のボタン" width="1206" height="2622" loading="lazy"></figure>
+      <p>圃場が多いときは、画面を上下に動かして見ます。</p>
+      <h2 id="s2">一覧の見方</h2>
+      <p>圃場ごとに1枚のカードが出ます。カードには、次のことが書いてあります。</p>
+      <div class="table-wrap">
+      <table>
+      <thead>
+      <tr>
+      <th>項目</th>
+      <th>内容</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>番号と名前</td>
+      <td>「1. 藤枝の苗場」のように、並び順の番号と圃場の名前</td>
+      </tr>
+      <tr>
+      <td>住所</td>
+      <td>都道府県と市区町村</td>
+      </tr>
+      <tr>
+      <td>標高と耕作面積</td>
+      <td>圃場の位置の標高。耕作面積は、入れた圃場だけに出ます</td>
+      </tr>
+      <tr>
+      <td>【気温】【降水量】【日照】</td>
+      <td>圃場に使う観測所の名前と、圃場からの距離、標高差。降水量は、選んだ観測所（1〜3地点）がすべて並びます</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <p>標高差は「観測所 − 圃場」です。観測所が圃場より高いところにあれば、プラスになります。</p>
+      <p>観測所の値は、屋外で測ったものです。圃場そのもの（ハウスの中など）を測った値ではありません。</p>
+      <h2 id="s3">圃場を追加する</h2>
+      <ol>
+      <li>一覧の下の「圃場を追加する」を押します</li>
+      <li>初期設定と同じように、位置 → 観測所 → 名前の順に登録します（<a href="/howto/setup">初期設定</a>の「1つ目の圃場を登録する」）</li>
+      <li>登録が済むと、一覧に戻ります</li>
+      </ol>
+      <p>登録できる圃場の数には上限があります（今は10件まで）。上限に達しているときは、案内が出ます。使っていない圃場を削除すると、追加できるようになります。</p>
+      <h2 id="s4">圃場を変える</h2>
+      <p>カードの右上の「…」を押すと、その圃場でできることの一覧が出ます。</p>
+      <figure class="shot"><img src="/howto/images/fields_02.png" alt="カードの「…」を押して、「名前と耕作面積、住所を変える」「気温の観測所を変える」「降水量の観測所を変える」「日照の観測所を変える」「この圃場を削除する」が並んだところ" width="1206" height="2622" loading="lazy"></figure>
+      <h3>名前と耕作面積、住所を変える</h3>
+      <ol>
+      <li>「名前と耕作面積、住所を変える」を押します</li>
+      <li>「圃場の名前と耕作面積、住所」の画面で、変えたいところを直します。耕作面積は空欄にもできます</li>
+      <li>「保存する」を押すと、一覧に戻ります</li>
+      </ol>
+      <h3>観測所を変える</h3>
+      <p>気温・降水量・日照の観測所は、それぞれ別に変えられます。</p>
+      <ol>
+      <li>「気温の観測所を変える」（または降水量・日照）を押します</li>
+      <li>今の観測所が選ばれた状態で、近い観測所が並びます。画面は、初期設定の観測所を選ぶ画面と同じです（<a href="/howto/setup">初期設定</a>の「観測所を選ぶ」）。別の観測所を押します</li>
+      <li>「これで決める」を押すと、一覧に戻ります。選び直していなければ、何も変わりません</li>
+      </ol>
+      <h3>圃場の位置は変えられません</h3>
+      <p>位置が違えば、別の圃場として扱います。位置を変えたいときは、新しい圃場として追加してください。</p>
+      <h2 id="s5">並べ替える</h2>
+      <p>圃場が2件以上あると、一覧の右上に「並べ替え」が出ます。</p>
+      <ol>
+      <li>「並べ替え」を押します</li>
+      <li>「圃場の並べ替え」の画面で、右の印をつまんで、上下に動かします</li>
+      <li>「保存する」を押すと、一覧がその順になります。保存せずに左上の「&lt;」で戻ると、元の順のままです</li>
+      </ol>
+      <p>一覧の1番目の圃場は、足元の状況や栽培日誌で、はじめに選ばれる圃場になります。</p>
+      <figure class="shot"><img src="/howto/images/fields_03.png" alt="圃場の並べ替えの画面。圃場の名前と、右のつまむ印" width="1206" height="2622" loading="lazy"></figure>
+      <h2 id="s6">圃場を削除する</h2>
+      <ol>
+      <li>削除したい圃場のカードの「…」を押し、「この圃場を削除する」を押します</li>
+      </ol>
+      <figure class="shot"><img src="/howto/images/fields_04_1.png" alt="カードの「…」の一覧。いちばん下に「この圃場を削除する」" width="1206" height="2622" loading="lazy"></figure>
+      <ol>
+      <li>「「藤枝の本圃2」を削除しますか？」のように、圃場の名前が入った確認が出ます。削除してよければ「削除する」を押します。やめるときは「削除しないで戻る」を押します</li>
+      </ol>
+      <figure class="shot"><img src="/howto/images/fields_04_2.png" alt="圃場の削除の確認。「削除しないで戻る」と、赤い字の「削除する」のボタン" width="1206" height="2622" loading="lazy"></figure>
+      <p>削除すると、元に戻せません。間違えて削除したときは、もう一度登録してください。</p>
+      <p>その圃場で育てている作物があるときは、削除した日の日付で「栽培中止」として記録されます。苗場から本圃へ定植した作物は、苗場を削除しても止まりません。</p>
+      <p>収穫が終わった作物は、先に「栽培日誌」で「収穫終了」を記録してから、圃場を削除してください。記録しないまま削除すると、「栽培中止」として残ります。</p>
+      <p>削除した圃場には、日誌を書けなくなります。</p>
+    </article>
+    <nav class="page-nav" aria-label="前後のページ">
+      <a class="prev" href="/howto/setup"><small>前へ</small>初期設定</a>
+      <a class="next" href="/howto/conditions"><small>次へ</small>足元の状況</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="/">耕雲 <span>こううん</span></a>
+    <p>天候データで農業を支援する。</p>
+    <div class="footer-links">
+      <a href="/legal/terms">利用規約</a>
+      <a href="/legal/privacy">個人情報の取扱い</a>
+      <a href="https://takaosan.app" target="_blank" rel="noopener noreferrer">開発者サイト ↗</a>
+    </div>
+    <small>© takaosan.app</small>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="圃場の近くの観測所の値を、今年・昨年・平年で比べて見るページです。栽培の判断の材料としてお使いください。">
+  <title>足元の状況｜使い方｜耕雲</title>
+  <link rel="icon" type="image/png" href="/assets/icons/icon_origin.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <p class="notice">耕雲は現在テスト版です。アプリの正式公開に向けて準備しています。</p>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="耕雲 トップ">
+      <img src="/assets/icons/icon_origin.png" alt="" width="42" height="42">
+      <span>耕雲<small>こううん</small></span>
+    </a>
+    <nav aria-label="メインナビゲーション">
+      <a href="/#about">耕雲について</a>
+      <a href="/howto/">使い方</a>
+      <a href="/news/">お知らせ</a>
+    </nav>
+  </header>
+
+  <main class="howto-page">
+    <p class="breadcrumb"><a href="/howto/">使い方</a></p>
+    <h1>足元の状況</h1>
+    <p class="lead">圃場の近くの観測所の値を、今年・昨年・平年で比べて見るページです。栽培の判断の材料としてお使いください。</p>
+    <nav class="on-this-page" aria-label="このページの内容">
+    <p>このページの内容</p>
+    <ol>
+      <li><a href="#s1">画面を開く</a></li>
+      <li><a href="#s2">見るものを選ぶ</a></li>
+      <li><a href="#s3">期間を選ぶ</a></li>
+      <li><a href="#s4">積算とは</a></li>
+      <li><a href="#s5">グラフの見方</a></li>
+      <li><a href="#s6">表と、平年との比べ方</a></li>
+      <li><a href="#s7">気をつけること</a></li>
+    </ol>
+    </nav>
+    <article>
+      <h2 id="s1">画面を開く</h2>
+      <p>「耕雲 ホーム」で「足元の状況」を押します。</p>
+      <figure class="shot"><img src="/howto/images/conditions_01.png" alt="足元の状況の画面。上から、圃場の選択、指標の選択（日平均気温を選んだ状態）、参照の観測所、期間、日平均気温の積算のグラフ、今年・昨年・平年の表" width="1206" height="2622" loading="lazy"></figure>
+      <p>画面は上から、選ぶところ（圃場・指標）、期間、グラフ、表の順に並んでいます。画面を上下に動かして、全体を見ます。</p>
+      <h2 id="s2">見るものを選ぶ</h2>
+      <ol>
+      <li>圃場が2件以上あるときは、いちばん上で圃場を選びます</li>
+      <li>指標を「日平均気温」「日最高気温」「日最低気温」「降水量」「日照時間」から選びます</li>
+      <li>降水量で観測所を2つ以上選んである圃場では、指標の下に観測所の名前が並びます。見たい観測所を押します</li>
+      </ol>
+      <figure class="shot"><img src="/howto/images/conditions_03.png" alt="降水量を選び、観測所の名前（静岡空港・高根山・菊川牧之原）が並んだところ。グラフの下に今年・昨年・平年の表と、比べた文" width="1206" height="2622" loading="lazy"></figure>
+      <p>その下の「参照：」に、使っている観測所の名前と、圃場からの距離、標高差が出ます。</p>
+      <h2 id="s3">期間を選ぶ</h2>
+      <p>「期間：」の右に、起点の日と、最新の観測日が出ます。</p>
+      <ul>
+      <li>起点は、はじめは最新の観測日の1か月前です</li>
+      <li>起点の日（暦の印のボタン）を押すと、「起点の日を選ぶ」の暦が出ます。日を押して「OK」を押すと、その日が起点になります。1年前の同じ日まで、さかのぼれます</li>
+      <li>暦の上の「＜」「＞」で月を移れます</li>
+      <li>最新の観測日は、ふつうは昨日です。観測所の値は、毎朝新しくなります</li>
+      </ul>
+      <figure class="shot"><img src="/howto/images/conditions_02.png" alt="起点の日を選ぶの暦。10月4日が選ばれ、下に「キャンセル」と「OK」" width="1206" height="2622" loading="lazy"></figure>
+      <p>定植の日や、施肥・防除をした日を起点にすると、その日からの積み重ねを見られます。</p>
+      <h2 id="s4">積算とは</h2>
+      <p>積算は、起点の日から最新の観測日まで、毎日の値を足したものです。</p>
+      <div class="table-wrap">
+      <table>
+      <thead>
+      <tr>
+      <th>指標</th>
+      <th>単位</th>
+      <th>例</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>日平均気温・日最高気温・日最低気温</td>
+      <td>°C・日</td>
+      <td>日平均気温が20°Cの日が10日続くと、200°C・日</td>
+      </tr>
+      <tr>
+      <td>降水量</td>
+      <td>mm</td>
+      <td>期間に降った雨の合計</td>
+      </tr>
+      <tr>
+      <td>日照時間</td>
+      <td>時間</td>
+      <td>期間に日が照った時間の合計</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <h2 id="s5">グラフの見方</h2>
+      <p>グラフは、起点からの積算が、日を追ってどう増えていくかを示します。横の軸が日付、縦の軸が積算です。</p>
+      <div class="table-wrap">
+      <table>
+      <thead>
+      <tr>
+      <th>線</th>
+      <th>意味</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>今年（実線）</td>
+      <td>今年の、起点から最新の観測日までの積算</td>
+      </tr>
+      <tr>
+      <td>昨年（破線）</td>
+      <td>昨年の同じ期間の積算</td>
+      </tr>
+      <tr>
+      <td>平年（点線）</td>
+      <td>気象庁の平年値で計算した、同じ期間の積算</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <p>今年の線が平年の線より上にあれば、平年より暑い（雨が多い、日照が多い）ことを示します。</p>
+      <h2 id="s6">表と、平年との比べ方</h2>
+      <p>グラフの下の表に、今年・昨年・平年の積算が並びます（上の降水量の画面の例を参照）。</p>
+      <div class="table-wrap">
+      <table>
+      <thead>
+      <tr>
+      <th>欄</th>
+      <th>意味</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>積算</td>
+      <td>期間の合計</td>
+      </tr>
+      <tr>
+      <td>計算に入った日数</td>
+      <td>「31日中30日」のように、期間の日数のうち、値があった日数</td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <p>表の下に、「今年は、平年より 54.6 °C・日 多いです。」のように、昨年・平年と比べた差が出ます。</p>
+      <h3>値が欠けている日があるとき</h3>
+      <p>観測所の機械の点検などで、値が欠けている日があります（欠測）。欠測の日は積算に入れず、表の下に「今年の欠測：」として日付が出ます。計算に入った日数が少ないときは、差を少し割り引いて見てください。</p>
+      <p>平年値がない観測所や期間では、「平年は、この期間では計算できません。」と出ます。</p>
+      <h2 id="s7">気をつけること</h2>
+      <ul>
+      <li>値は、屋外の観測所で測ったものです。圃場やハウスの中を測ったものではありません</li>
+      <li>観測所と圃場は、距離と標高が違います。標高差が大きいほど、気温の差も大きくなります</li>
+      <li>アプリは、生育の予測や判断はしません。判断は、ご自身の経験と合わせて行ってください</li>
+      <li>出典：気象庁（観測値、平年値）</li>
+      </ul>
+    </article>
+    <nav class="page-nav" aria-label="前後のページ">
+      <a class="prev" href="/howto/fields"><small>前へ</small>圃場の一覧</a>
+      <a class="next" href="/howto/diary"><small>次へ</small>栽培日誌</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="/">耕雲 <span>こううん</span></a>
+    <p>天候データで農業を支援する。</p>
+    <div class="footer-links">
+      <a href="/legal/terms">利用規約</a>
+      <a href="/legal/privacy">個人情報の取扱い</a>
+      <a href="https://takaosan.app" target="_blank" rel="noopener noreferrer">開発者サイト ↗</a>
+    </div>
+    <small>© takaosan.app</small>
+  </footer>
+</body>
+</html>
