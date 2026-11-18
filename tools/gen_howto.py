@@ -201,6 +201,7 @@ def build_index(entries):
   <ul class="howto-list">
 {indent(chr(10).join(items), 4)}
   </ul>
+  <p class="howto-more">アプリを更新したときに変わったところは、<a href="/history/">更新履歴</a>をご覧ください。</p>
   <a class="back-link" href="/">← トップページへ戻る</a>
 </main>
 """

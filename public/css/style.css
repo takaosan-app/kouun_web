@@ -183,3 +183,10 @@ th { background: #f1f5f1; }
   .shot { max-width: 260px; }
   .page-nav a { max-width: none; }
 }
+.history-date { margin-bottom: 8px; color: var(--green-700); font-size: 13px; font-weight: 600; }
+.history-list .date { flex: 0 0 auto; min-width: 8.5em; color: var(--green-700); font-size: 14px; font-weight: 600; }
+.howto-more { margin-top: 24px; font-size: 14px; }
+.howto-more a { color: var(--green-700); font-weight: 600; }
+@media (max-width: 760px) {
+  .history-list a { flex-direction: column; align-items: flex-start; gap: 4px; }
+}

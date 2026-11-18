@@ -2,3 +2,4 @@
 .gitignore
 .env
 .wrangler
+__pycache__/
