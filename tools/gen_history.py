@@ -15,7 +15,7 @@ from pathlib import Path
 
 import markdown
 
-from gen_howto import FOOT, HEAD, indent
+from gen_howto import FOOT, HEAD, date_label, indent
 
 WWW = Path(__file__).resolve().parent.parent
 DOCS_HISTORY = WWW.parent / "docs" / "history"
@@ -31,11 +31,6 @@ def version_label(name):
     """「1.0.0+3」を、アプリの表示と同じ「1.0.0 (3)」にする。"""
     version, _, build = name.partition("+")
     return f"{version} ({build})"
-
-
-def date_label(date):
-    year, month, day = date.split("-")
-    return f"{int(year)}年{int(month)}月{int(day)}日"
 
 
 def page_name(date):

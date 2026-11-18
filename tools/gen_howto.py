@@ -40,6 +40,10 @@ PENDING_LEAD = {
     "notices": "病害虫に注意したい時期の知らせの見方です。この機能は準備中です。",
 }
 
+# 使い方のページを最後に更新した日と、合わせたアプリの版。原稿が変わって作り直したら直す
+UPDATED = "2026-11-18"
+UPDATED_VERSION = "1.0.0 (3)"
+
 # スクリーンショットを縮めた後の幅。ページでは最大300pxで出すので、高精細の画面でもぼやけない2倍にする
 SHOT_WIDTH = 600
 # WebP の画質（0〜100）
@@ -86,6 +90,12 @@ FOOT = """
 </body>
 </html>
 """
+
+
+def date_label(date):
+    """「2026-11-18」を「2026年11月18日」にする。"""
+    year, month, day = date.split("-")
+    return f"{int(year)}年{int(month)}月{int(day)}日"
 
 
 def indent(text, spaces):
@@ -197,6 +207,7 @@ def build_index(entries):
     main = f"""<main class="howto-page">
   <p class="eyebrow">GUIDE</p>
   <h1>使い方</h1>
+  <p class="history-date">更新日：<time datetime="{UPDATED}">{date_label(UPDATED)}</time>（アプリの版 {UPDATED_VERSION} に合わせています）</p>
   <p class="lead">耕雲のアプリの使い方をご案内します。はじめての方は「初期設定」からお読みください。</p>
   <ul class="howto-list">
 {indent(chr(10).join(items), 4)}
