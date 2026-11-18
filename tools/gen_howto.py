@@ -3,20 +3,21 @@
 使い方（www/ で実行）:
     python3 tools/gen_howto.py
 
-必要なもの: Python の markdown ライブラリ（pip install markdown）
+必要なもの: Python の markdown と Pillow（sudo apt install python3-markdown python3-pil）
 原稿が変わったら、これを実行して public/howto/ のHTMLと画像を作り直す。
 
 - 目次（public/howto/index.html）と、PAGES の各ページ（public/howto/<名前>.html）を作る
 - 原稿がまだないページは「準備中」と出す
 - 原稿の中の <!-- --> の注記は、HTMLに出さない
-- 原稿が使っている画像だけを public/howto/images/ に写す。画像がまだないときは枠だけを出す
+- 原稿が使っている画像だけを、幅 SHOT_WIDTH の WebP に縮めて public/howto/images/ に置く。
+  画像がまだないときは枠だけを出す
 """
 import html
 import re
-import shutil
 from pathlib import Path
 
 import markdown
+from PIL import Image
 
 WWW = Path(__file__).resolve().parent.parent
 DOCS_HOWTO = WWW.parent / "docs" / "howto"
@@ -39,8 +40,10 @@ PENDING_LEAD = {
     "notices": "病害虫に注意したい時期の知らせの見方です。この機能は準備中です。",
 }
 
-# スクリーンショットの大きさ（iPhoneの縦の画面）。読み込みの間に、ページの形が崩れないようにするため
-SHOT_WIDTH, SHOT_HEIGHT = 1206, 2622
+# スクリーンショットを縮めた後の幅。ページでは最大300pxで出すので、高精細の画面でもぼやけない2倍にする
+SHOT_WIDTH = 600
+# WebP の画質（0〜100）
+SHOT_QUALITY = 80
 
 HEAD = """<!doctype html>
 <html lang="ja">
@@ -121,9 +124,10 @@ def to_body(md_text, used_images):
         src, alt = m.group("src"), m.group("alt")
         name = src.split("/")[-1]
         if (DOCS_HOWTO / "images" / name).exists():
-            used_images.add(name)
-            return (f'<figure class="shot"><img src="/howto/images/{name}" alt="{alt}" '
-                    f'width="{SHOT_WIDTH}" height="{SHOT_HEIGHT}" loading="lazy"></figure>')
+            out_name, width, height = shrink_image(name)
+            used_images.add(out_name)
+            return (f'<figure class="shot"><img src="/howto/images/{out_name}" alt="{alt}" '
+                    f'width="{width}" height="{height}" loading="lazy"></figure>')
         return f'<figure class="shot shot-missing" role="img" aria-label="{alt}"><span>画像を準備中です</span></figure>'
 
     body = re.sub(r'<p><img alt="(?P<alt>[^"]*)" src="(?P<src>[^"]*)" ?/?></p>', to_figure, body)
@@ -204,11 +208,24 @@ def build_index(entries):
     (OUT / "index.html").write_text(out, encoding="utf-8")
 
 
-def copy_images(used_images):
-    """原稿が使っている画像だけを写し、使わなくなった画像は消す。"""
+def shrink_image(name):
+    """原稿の画像を幅 SHOT_WIDTH の WebP に縮めて置き、置いた名前と大きさを返す。
+    置いたものが原稿の画像より新しければ、縮め直さない。"""
+    src = DOCS_HOWTO / "images" / name
+    out = OUT_IMAGES / (Path(name).stem + ".webp")
+    if out.exists() and out.stat().st_mtime >= src.stat().st_mtime:
+        with Image.open(out) as img:
+            return out.name, img.width, img.height
     OUT_IMAGES.mkdir(parents=True, exist_ok=True)
-    for name in sorted(used_images):
-        shutil.copy2(DOCS_HOWTO / "images" / name, OUT_IMAGES / name)
+    with Image.open(src) as img:
+        height = round(img.height * SHOT_WIDTH / img.width)
+        small = img.convert("RGB").resize((SHOT_WIDTH, height), Image.LANCZOS)
+        small.save(out, "WEBP", quality=SHOT_QUALITY, method=6)
+    return out.name, SHOT_WIDTH, height
+
+
+def remove_old_images(used_images):
+    """使わなくなった画像を消す。"""
     for old in OUT_IMAGES.glob("*"):
         if old.name not in used_images:
             old.unlink()
@@ -219,7 +236,7 @@ def main():
     used_images = set()
     entries = [build_page(i, used_images) for i in range(len(PAGES))]
     build_index(entries)
-    copy_images(used_images)
+    remove_old_images(used_images)
     for (name, _, _), (_, _, pending) in zip(PAGES, entries):
         print(f"howto/{name}.html" + ("（準備中）" if pending else ""))
     print(f"画像 {len(used_images)} 枚")
